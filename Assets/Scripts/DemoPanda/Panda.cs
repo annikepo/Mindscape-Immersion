@@ -21,6 +21,30 @@ public class Panda : MonoBehaviour
         ClearPrevStates();
         _animator.SetTrigger("greet");
     }
+
+    public void HandOverFlowers()
+    {
+        ClearPrevStates();
+        _animator.SetTrigger("handOverFlowers");
+    }
+
+    public void SitDown()
+    {
+        ClearPrevStates();
+        _animator.SetTrigger("sitDown");
+    }
+
+    public void StandUp()
+    {
+        ClearPrevStates();
+        _animator.SetTrigger("standUp");
+    }
+    
+    public void Capoeira()
+    {
+        ClearPrevStates();
+        _animator.SetTrigger("capoeira");
+    }
     
     private void Start()
     {
