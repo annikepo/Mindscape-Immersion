@@ -26,21 +26,26 @@ public class PandaAnimation : MonoBehaviour
     {
         // Panda waits outside of door;
         _panda.Capoeira();
+        Debug.Log("Panda: Capoeira Dance");
         yield return new WaitForSeconds(10f);
 
         // Panda opens the door
         _panda.OpenDoor();
-        yield return new WaitForSeconds(1f); // This is the wait time before panda opens the door
+        Debug.Log("Panda: Open door");
+        yield return new WaitForSeconds(10f); // This is the wait time before panda opens the door
 
         // Panda walks in after opening door
         _panda.Walk();
+        Debug.Log("Panda: Walk");
         yield return new WaitForSeconds(3f); 
 
        // Panda greets you
         _panda.Greet();
+        Debug.Log("Panda: Greet");
         yield return new WaitForSeconds(5f);
 
         _panda.HandOverFlowers();
+        Debug.Log("Panda: Hand Over Flowers");
         yield return new WaitForSeconds(3f);
     }
 }
