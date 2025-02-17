@@ -5,6 +5,8 @@ using UnityEngine;
 public class PandaAnimation : MonoBehaviour
 {
     [SerializeField] private Panda _panda;
+    [SerializeField] private Transform _targetPoistion;
+    [SerializeField] private float _walkSpeed = 2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,6 +15,12 @@ public class PandaAnimation : MonoBehaviour
         if ( _panda == null )
         {
             Debug.LogError("Panda script not found in scene");
+            return;
+        }
+
+        if ( _targetPoistion == null )
+        {
+            Debug.LogError("Target Position for Panda is not set");
             return;
         }
 
@@ -37,15 +45,36 @@ public class PandaAnimation : MonoBehaviour
         // Panda walks in after opening door
         _panda.Walk();
         Debug.Log("Panda: Walk");
-        yield return new WaitForSeconds(3f); 
+        yield return StartCoroutine(MoveToPosition(_panda.transform, _targetPoistion.position, _walkSpeed));
 
        // Panda greets you
         _panda.Greet();
         Debug.Log("Panda: Greet");
         yield return new WaitForSeconds(5f);
 
+        // Panda hands over flowers
         _panda.HandOverFlowers();
         Debug.Log("Panda: Hand Over Flowers");
         yield return new WaitForSeconds(3f);
+
+        //Panda holds flower towards user
+        _panda.HoldFlowers();
+        Debug.Log("Panda: Holds flower to user");
+        yield return new WaitForSeconds(10f);
+
+        //Panda takes down empty arm
+        _panda.TakeDownArm();
+        Debug.Log("Panda: Takes down arm");
+
+    }
+
+    // Coroutine to move the Panda smoothly to target position
+    private IEnumerator MoveToPosition(Transform panda, Vector3 target, float speed)
+    {
+        while (Vector3.Distance(panda.position, target) > 0.1f)
+        {
+            panda.position = Vector3.MoveTowards(panda.position, target, speed * Time.deltaTime);
+            yield return null;
+        }
     }
 }

@@ -29,6 +29,18 @@ public class Panda : MonoBehaviour
         _animator.SetTrigger("handOverFlowers");
     }
 
+    public void HoldFlowers()
+    {
+        ClearPrevStates();
+        _animator.SetTrigger("holdFlowers");
+    }
+
+    public void TakeDownArm()
+    {
+        ClearPrevStates();
+        _animator.SetTrigger("takeDownArm");
+    }
+
     public void SitDown()
     {
         ClearPrevStates();
