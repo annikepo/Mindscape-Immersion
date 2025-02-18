@@ -53,6 +53,11 @@ namespace MyGame.Animation
             Debug.Log("Panda: Greet");
             yield return new WaitForSeconds(5f);
 
+            // Panda does the dance
+            _panda.Capoeira();
+            Debug.Log("Panda: Capoeira Dance");
+            yield return new WaitForSeconds(10f);
+
             // Panda hands over flowers
             _panda.HandOverFlowers();
             Debug.Log("Panda: Hand Over Flowers");
