@@ -11,9 +11,15 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 55dd6397dd059324398dec8c06cb4153, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
+<<<<<<< HEAD
+  m_ValidKeywords:
+  - _DISABLE_SSR_TRANSPARENT
+  m_InvalidKeywords: []
+=======
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
+>>>>>>> newDev
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -108,7 +114,10 @@ Material:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Emission_Color: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
+<<<<<<< HEAD
+=======
   m_AllowLocking: 1
+>>>>>>> newDev
 --- !u!114 &4129780837305980848
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -138,6 +147,8 @@ MonoBehaviour:
   hdPluginSubTargetMaterialVersions:
     m_Keys: []
     m_Values: 
+<<<<<<< HEAD
+=======
 --- !u!114 &8287635156406313824
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -151,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 0
+>>>>>>> newDev

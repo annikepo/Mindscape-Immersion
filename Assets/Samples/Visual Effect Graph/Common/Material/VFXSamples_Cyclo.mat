@@ -132,6 +132,8 @@ MonoBehaviour:
   hdPluginSubTargetMaterialVersions:
     m_Keys: []
     m_Values: 
+<<<<<<< HEAD
+=======
 --- !u!114 &2561621635807265815
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -145,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 0
+>>>>>>> newDev
 --- !u!114 &3181783025248168869
 MonoBehaviour:
   m_ObjectHideFlags: 11

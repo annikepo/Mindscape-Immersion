@@ -59,6 +59,12 @@ public class Panda : MonoBehaviour
         _animator.SetTrigger("capoeira");
     }
 
+    public void Turn()
+    {
+        ClearPrevStates();
+        _animator.SetTrigger("turnAround");
+    }
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
