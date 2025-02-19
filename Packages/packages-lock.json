@@ -34,14 +34,14 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.com"
+      "url": "https://npm.developer.oculus.com"
     },
     "com.meta.xr.sdk.core": {
       "version": "72.0.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.com"
+      "url": "https://npm.developer.oculus.com"
     },
     "com.meta.xr.sdk.haptics": {
       "version": "72.0.0",
@@ -57,20 +57,20 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.textmeshpro": "3.0.6"
+        "com.unity.textmeshpro": "3.0.6",
+        "com.unity.ugui": "1.0.0"
       },
-      "url": "https://packages.unity.com"
+      "url": "https://npm.developer.oculus.com"
     },
     "com.meta.xr.sdk.interaction.ovr": {
       "version": "72.0.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.meta.xr.sdk.core": "72.0.0",
-        "com.meta.xr.sdk.interaction": "72.0.0"
+        "com.meta.xr.sdk.interaction": "72.0.0",
+        "com.meta.xr.sdk.core": "72.0.0"
       },
-      "url": "https://packages.unity.com"
+      "url": "https://npm.developer.oculus.com"
     },
     "com.meta.xr.sdk.platform": {
       "version": "72.0.0",
@@ -79,14 +79,14 @@
       "dependencies": {
         "com.unity.ugui": "1.0.0"
       },
-      "url": "https://packages.unity.com"
+      "url": "https://npm.developer.oculus.com"
     },
     "com.meta.xr.sdk.voice": {
       "version": "71.0.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "https://packages.unity.com"
+      "url": "https://npm.developer.oculus.com"
     },
     "com.meta.xr.simulator": {
       "version": "72.0.0",
@@ -95,7 +95,7 @@
       "dependencies": {
         "com.unity.editorcoroutines": "1.0.0"
       },
-      "url": "https://packages.unity.com"
+      "url": "https://npm.developer.oculus.com"
     },
     "com.unity.ai.navigation": {
       "version": "2.0.5",
