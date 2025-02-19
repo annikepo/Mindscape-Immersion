@@ -8,6 +8,7 @@ namespace MyGame.Animation
     {
         [SerializeField] private Panda _panda;
         [SerializeField] private Transform _targetPoistion;
+        [SerializeField] private Transform _exitPosition;
         [SerializeField] private float _walkSpeed = 2f;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -63,7 +64,7 @@ namespace MyGame.Animation
             Debug.Log("Panda: Hand Over Flowers");
             yield return new WaitForSeconds(3f);
 
-            //Panda holds flower towards user
+            // Panda holds flower towards user
             _panda.HoldFlowers();
             Debug.Log("Panda: Holds flower to user");
             yield return new WaitForSeconds(10f);
@@ -71,7 +72,17 @@ namespace MyGame.Animation
             //Panda takes down empty arm
             _panda.TakeDownArm();
             Debug.Log("Panda: Takes down arm");
+            yield return new WaitForSeconds(2f);
 
+            // Panda turns around
+            _panda.Turn();
+            Debug.Log("Panda: Turns Around");
+            yield return new WaitForSeconds(2f);
+
+            // Panda walks out
+            _panda.Walk();
+            Debug.Log("Panda: Walk out");
+            yield return StartCoroutine(MoveToPosition(_panda.transform, _exitPosition.position, _walkSpeed));
         }
 
         // Coroutine to move the Panda smoothly to target position
