@@ -57,7 +57,7 @@ namespace MyGame.Animation
             // Panda does the dance
             _panda.Capoeira();
             Debug.Log("Panda: Capoeira Dance");
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(7f);
 
             // Panda hands over flowers
             _panda.HandOverFlowers();
@@ -77,7 +77,8 @@ namespace MyGame.Animation
             // Panda turns around
             _panda.Turn();
             Debug.Log("Panda: Turns Around");
-            yield return new WaitForSeconds(2f);
+            yield return StartCoroutine(RotatePanda(_panda.transform, 180f));
+            yield return new WaitForSeconds(1f);
 
             // Panda walks out
             _panda.Walk();
@@ -93,6 +94,23 @@ namespace MyGame.Animation
                 panda.position = Vector3.MoveTowards(panda.position, target, speed * Time.deltaTime);
                 yield return null;
             }
+        }
+
+        private IEnumerator RotatePanda(Transform panda, float angle)
+        {
+            Quaternion startRotation = panda.rotation;
+            Quaternion targetRotation = startRotation * Quaternion.Euler(0, angle, 0);
+            float elapsedTime = 0f;
+            float rotationTime = 1f;
+
+            while (elapsedTime < rotationTime)
+            {
+                panda.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime / rotationTime);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            panda.rotation = targetRotation;
         }
     }
 }

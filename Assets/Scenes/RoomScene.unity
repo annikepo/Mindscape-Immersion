@@ -1213,6 +1213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panda_v2
       objectReference: {fileID: 0}
+    - target: {fileID: 7081432450605685456, guid: c8a0d110588364f63b5d8afb03d8d891, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
