@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Flower
+  serializedVersion: 3
+  tags:
+  - Panda
   layers:
   - Default
   - TransparentFX
@@ -48,5 +51,7 @@ TagManager:
   - name: Flower
     uniqueID: 120816141
     locked: 0
+  m_RenderingLayers:
+  - Default
   m_RenderingLayers:
   - Default
