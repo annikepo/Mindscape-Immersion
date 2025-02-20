@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,6 +11,11 @@ namespace MyGame.Animation
         [SerializeField] private Transform _targetPoistion;
         [SerializeField] private Transform _exitPosition;
         [SerializeField] private float _walkSpeed = 2f;
+        [SerializeField] private Flower _flower;
+        [SerializeField] private Transform _flowerTargetPosition;
+        [SerializeField] private float _flowerMoveDuration = 1.5f;
+        [SerializeField] private Animator _flowerAnimator;
+
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Awake()
@@ -23,6 +29,12 @@ namespace MyGame.Animation
             if (_targetPoistion == null)
             {
                 Debug.LogError("Target Position for Panda is not set");
+                return;
+            }
+
+            if (_flower == null || _flowerTargetPosition == null)
+            {
+                Debug.LogError("Flower or Flower Target Position is not assigned!");
                 return;
             }
 
@@ -67,6 +79,8 @@ namespace MyGame.Animation
             // Panda holds flower towards user
             _panda.HoldFlowers();
             Debug.Log("Panda: Holds flower to user");
+            yield return StartCoroutine(RotatePanda(_panda.transform, 90f)); //Remove this if grab works
+            yield return StartCoroutine(MoveFlowerToTarget()); // Remove if grab works, move flower and animate bloom
             yield return new WaitForSeconds(10f);
 
             //Panda takes down empty arm
@@ -74,11 +88,12 @@ namespace MyGame.Animation
             Debug.Log("Panda: Takes down arm");
             yield return new WaitForSeconds(2f);
 
+            // **** REMOVE COMMENT SLASHES IF GRAB WORK ****
             // Panda turns around
-            _panda.Turn();
-            Debug.Log("Panda: Turns Around");
-            yield return StartCoroutine(RotatePanda(_panda.transform, 180f));
-            yield return new WaitForSeconds(1f);
+            // _panda.Turn();
+            // Debug.Log("Panda: Turns Around");
+            // yield return StartCoroutine(RotatePanda(_panda.transform, 180f));
+            // yield return new WaitForSeconds(1f);
 
             // Panda walks out
             _panda.Walk();
@@ -111,6 +126,31 @@ namespace MyGame.Animation
             }
 
             panda.rotation = targetRotation;
+        }
+
+        private IEnumerator MoveFlowerToTarget()
+        {
+            if (_flower == null || _flowerTargetPosition == null)
+                yield break;
+
+            _flower.transform.SetParent(null);
+
+            _flower.transform.position = _panda.transform.position; // Reset to Panda’s position before moving
+
+
+            // Move the flower smoothly to target using DOTween
+            _flower.transform.DOMove(_flowerTargetPosition.position, _flowerMoveDuration)
+                .SetEase(Ease.OutQuad)
+                .OnComplete(() =>
+                {
+                    // Trigger bloom animation after reaching the target
+                    if (_flowerAnimator != null)
+                    {
+                        _flowerAnimator.SetTrigger("Bloom");
+                    }
+                });
+
+            yield return new WaitForSeconds(_flowerMoveDuration);
         }
     }
 }
