@@ -3,12 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-<<<<<<< HEAD
-  - Flower
-=======
-  - Panda
->>>>>>> SaeiNew
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -46,14 +41,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
-  - name: Player
-    uniqueID: 2619966991
-    locked: 0
-  - name: Flower
-    uniqueID: 120816141
-    locked: 0
-=======
->>>>>>> SaeiNew
   m_RenderingLayers:
   - Default
