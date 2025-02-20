@@ -9,6 +9,7 @@ public class FlowerGrabBloom : MonoBehaviour
     public void GetGrabbed()
     {
         ReleaseFlower();
+        // we can comment in the line below if we don't want the flower to bloom when it's grabbed by player
         Bloom();
     }
 
