@@ -1,17 +1,17 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
-
 namespace MyGame.Animation
 {
     public class PandaAnimation : MonoBehaviour
     {
         [SerializeField] private Panda _panda;
         [SerializeField] private Transform _targetPoistion;
-        [SerializeField] private Transform _exitPosition;
         [SerializeField] private float _walkSpeed = 2f;
         [SerializeField] private AudioClip[] doorSoundClip;
-
+        [SerializeField] private Transform _exitPosition;
+        [SerializeField] private GameObject object1;
+        [SerializeField] private GameObject object2;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Awake()
         {
@@ -33,6 +33,7 @@ namespace MyGame.Animation
             StartCoroutine(PandaRoutine());
         }
 
+   
         private IEnumerator PandaRoutine()
         {
             // Panda waits outside of door;
@@ -82,10 +83,14 @@ namespace MyGame.Animation
             Debug.Log("Panda: Turns Around");
             yield return StartCoroutine(RotatePanda(_panda.transform, 180f));
             yield return new WaitForSeconds(1f);
+            object1.SetActive(true);
+            object2.SetActive(true);
+           
 
             // Panda walks out
             _panda.Walk();
             Debug.Log("Panda: Walk out");
+            SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f, 0);
             yield return StartCoroutine(MoveToPosition(_panda.transform, _exitPosition.position, _walkSpeed));
         }
 
