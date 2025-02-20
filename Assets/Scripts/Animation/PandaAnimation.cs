@@ -10,6 +10,8 @@ namespace MyGame.Animation
         [SerializeField] private float _walkSpeed = 2f;
         [SerializeField] private AudioClip[] doorSoundClip;
         [SerializeField] private Transform _exitPosition;
+        [SerializeField] private GameObject object1;
+        [SerializeField] private GameObject object2;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Awake()
         {
@@ -45,10 +47,11 @@ namespace MyGame.Animation
             Debug.Log("Panda: Open door");
             yield return new WaitForSeconds(10f); // This is the wait time before panda opens the door
 
-        // Panda walks in after opening door
-        _panda.Walk();
-        Debug.Log("Panda: Walk");
-        yield return StartCoroutine(MoveToPosition(_panda.transform, _targetPoistion.position, _walkSpeed));
+            // Panda walks in after opening door
+            _panda.Walk();
+            Debug.Log("Panda: Walk");
+            SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f, 0);
+            yield return StartCoroutine(MoveToPosition(_panda.transform, _targetPoistion.position, _walkSpeed));
 
             // Panda greets you
             _panda.Greet();
@@ -80,10 +83,14 @@ namespace MyGame.Animation
             Debug.Log("Panda: Turns Around");
             yield return StartCoroutine(RotatePanda(_panda.transform, 180f));
             yield return new WaitForSeconds(1f);
+            object1.SetActive(true);
+            object2.SetActive(true);
+           
 
             // Panda walks out
             _panda.Walk();
             Debug.Log("Panda: Walk out");
+            SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f, 0);
             yield return StartCoroutine(MoveToPosition(_panda.transform, _exitPosition.position, _walkSpeed));
         }
 
