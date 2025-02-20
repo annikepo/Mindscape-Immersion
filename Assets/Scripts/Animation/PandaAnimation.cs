@@ -7,6 +7,7 @@ public class PandaAnimation : MonoBehaviour
     [SerializeField] private Panda _panda;
     [SerializeField] private Transform _targetPoistion;
     [SerializeField] private float _walkSpeed = 2f;
+    [SerializeField] private AudioClip[] doorSoundClip;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +36,7 @@ public class PandaAnimation : MonoBehaviour
         // Panda waits outside of door;
         _panda.Capoeira();
         Debug.Log("Panda: Capoeira Dance");
+        SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f,1);
         yield return new WaitForSeconds(10f);
 
         // Panda opens the door
@@ -45,6 +47,7 @@ public class PandaAnimation : MonoBehaviour
         // Panda walks in after opening door
         _panda.Walk();
         Debug.Log("Panda: Walk");
+        SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f,0);
         yield return StartCoroutine(MoveToPosition(_panda.transform, _targetPoistion.position, _walkSpeed));
 
        // Panda greets you
