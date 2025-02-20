@@ -62,6 +62,7 @@ namespace MyGame.Animation
             // Panda does the dance
             _panda.Capoeira();
             Debug.Log("Panda: Capoeira Dance");
+            SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f, 3);
             yield return new WaitForSeconds(7f);
 
             // Panda hands over flowers
