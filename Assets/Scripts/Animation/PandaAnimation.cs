@@ -56,6 +56,7 @@ namespace MyGame.Animation
             // Panda greets you
             _panda.Greet();
             Debug.Log("Panda: Greet");
+            SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f, 2);
             yield return new WaitForSeconds(5f);
 
             // Panda does the dance
