@@ -4,34 +4,24 @@ using UnityEngine;
 public class FlowerGrabBloom : MonoBehaviour
 {
     private Rigidbody _rigidbody;
-    // private OVRGrabbable _grabbable;
+    private Animator _animator;
 
     public void GetGrabbed()
     {
         ReleaseFlower();
+        Bloom();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        // _grabbable = GetComponent<OVRGrabbable>();
 
         // Ensure flower stays in Pandas hand initially
         _rigidbody.isKinematic = true;
         _rigidbody.useGravity = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Check if the flower is grabbed by the player
         
-        
-        // if (_grabbable.isGrabbed)
-        // {
-        //     ReleaseFlower();
-        // }
+        _animator = GetComponent<Animator>();
     }
 
     private void ReleaseFlower()
@@ -42,5 +32,10 @@ public class FlowerGrabBloom : MonoBehaviour
 
         // Unparent from Pandas hand so it behaves like normal
         transform.parent = null;
+    }
+
+    private void Bloom()
+    {
+        _animator.SetBool("IsInVase", true);
     }
 }
