@@ -1,15 +1,21 @@
+using Oculus.Interaction;
 using UnityEngine;
 
 public class FlowerGrabBloom : MonoBehaviour
 {
     private Rigidbody _rigidbody;
-    private OVRGrabbable _grabbable;
+    // private OVRGrabbable _grabbable;
+
+    public void GetGrabbed()
+    {
+        ReleaseFlower();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _grabbable = GetComponent<OVRGrabbable>();
+        // _grabbable = GetComponent<OVRGrabbable>();
 
         // Ensure flower stays in Pandas hand initially
         _rigidbody.isKinematic = true;
@@ -20,10 +26,12 @@ public class FlowerGrabBloom : MonoBehaviour
     void Update()
     {
         // Check if the flower is grabbed by the player
-        if (_grabbable.isGrabbed)
-        {
-            ReleaseFlower();
-        }
+        
+        
+        // if (_grabbable.isGrabbed)
+        // {
+        //     ReleaseFlower();
+        // }
     }
 
     private void ReleaseFlower()
