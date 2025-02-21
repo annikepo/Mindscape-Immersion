@@ -1149,6 +1149,7 @@ MonoBehaviour:
   _targetPoistion: {fileID: 931096708}
   _exitPosition: {fileID: 1979128262}
   _walkSpeed: 2
+  doorSoundClip: []
 --- !u!4 &741647450
 Transform:
   m_ObjectHideFlags: 0
@@ -2694,7 +2695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7745569270247476329, guid: 90ea48c7f3ab246fab9ffe485327f0eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 7745569270247476329, guid: 90ea48c7f3ab246fab9ffe485327f0eb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2702,7 +2703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7745569270247476329, guid: 90ea48c7f3ab246fab9ffe485327f0eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.42
       objectReference: {fileID: 0}
     - target: {fileID: 7745569270247476329, guid: 90ea48c7f3ab246fab9ffe485327f0eb, type: 3}
       propertyPath: m_LocalRotation.w

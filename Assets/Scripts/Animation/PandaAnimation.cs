@@ -38,7 +38,7 @@ namespace MyGame.Animation
             // Panda waits outside of door;
             _panda.Capoeira();
             Debug.Log("Panda: Capoeira Dance");
-            SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f, 1);
+            // SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f, 1);
             yield return new WaitForSeconds(10f);
 
             // Panda opens the door
@@ -49,7 +49,7 @@ namespace MyGame.Animation
             // Panda walks in after opening door
             _panda.Walk();
             Debug.Log("Panda: Walk");
-            SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f, 0);
+            // SoundFXManager.instance.PlaySoundFXClip(doorSoundClip, transform, 1f, 0);
             yield return StartCoroutine(MoveToPosition(_panda.transform, _targetPoistion.position, _walkSpeed));
 
             // Panda greets you
