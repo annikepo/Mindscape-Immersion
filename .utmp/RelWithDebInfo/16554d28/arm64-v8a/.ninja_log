@@ -1,0 +1,12 @@
+# ninja log v5
+121	1214	7618390221872401	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	85a9d5ccfc275035
+1216	1398	7618390223877880	C:/Users/anni/test/Mindscape-Immersion/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/16554d28/obj/arm64-v8a/libswappywrapper.so	310a588c0f1a86b
+36	6260	7618390271847327	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	4a102022006bf886
+73	6405	7618390272645501	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	8138a54a3489a15f
+7	6561	7618390275167206	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c1b7bcff4553fe15
+91	6679	7618390276345637	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	99a0e1d98b8b0522
+15	6871	7618390278393694	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	30985d3838e75553
+23	6959	7618390279198123	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	12c93a5f80f94e40
+53	7606	7618390285723177	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	3928d12ae382b0a4
+1	7691	7618390286588522	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	893cb0a52c7a37d7
+7691	7934	7618390289040200	C:/Users/anni/test/Mindscape-Immersion/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/16554d28/obj/arm64-v8a/libgame.so	99a36074a83e0a34
